@@ -1,13 +1,22 @@
+
 * {
   margin: 0px;
   padding: 0px;
+}
+
+.m-r{
+  margin-right: 20px;
+}
+
+h1{
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .navBar {
   display: flex;
   position: fixed;
   top: 0;
-  left: 0;
   width: 90%;
   z-index: 1000;
   left: 50%; 
@@ -78,6 +87,44 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #f15d36;
 }
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(35, 34, 41);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 0 0 10px 10px;
+  top: 100%;  /* Position below the link */
+  left: 0;
+}
+
+.dropdown-content a {
+  color: aliceblue;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover > .link {
+  background-color: #575757;
+}
+
 
 .main-info {
   position: relative;
@@ -161,7 +208,7 @@ button[type="submit"]:hover {
 }
 
 .canteen-box {
-  background-color: rgba(241,93,54,0.5);
+  background-color: #ffd9b6;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -177,16 +224,16 @@ background-color: #ffffff;
   width: 300px;
   border-radius: 10px;
   text-align: center;
+  transition: transform 0.3s ease;
 }
 .library img{
   width: 300px;
   height: 200px;
   margin: 0px 0px 15px 0px;
   border-radius: 10px 10px 0px 0px;
-  transition: transform 0.3s ease;
 }
 
-.library:hover img{
+.library:hover {
   transform: scale(1.1);
 }
 
@@ -206,6 +253,7 @@ background-color: #ffffff;
   width: 300px;
   border-radius: 10px;
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .turning-point img{
@@ -213,10 +261,9 @@ background-color: #ffffff;
   height: 200px;
   margin: 0px 0px 15px 0px;
   border-radius: 10px 10px 0px 0px;
-  transition: transform 0.3s ease;
 }
 
-.turning-point:hover img{
+.turning-point:hover {
   transform: scale(1.1);
 }
 
@@ -236,6 +283,7 @@ background-color: #ffffff;
   width: 300px;
   border-radius: 10px;
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .central-canteen img{
@@ -243,10 +291,9 @@ background-color: #ffffff;
   height: 200px;
   margin: 0px 0px 15px 0px;
   border-radius: 10px 10px 0px 0px;
-  transition: transform 0.3s ease;
 }
 
-.central-canteen:hover img{
+.central-canteen:hover {
   transform: scale(1.1);
 }
 
@@ -272,6 +319,150 @@ background-color: #ffffff;
 
 .footer p{
   color: #ffffff;
-
 }
 
+/* Cateens Page STyling */
+
+/* Molana Azad Canteen */
+.search {
+  display: flex;
+  background: #ffffff;
+  background-image: url(../images/library.jpg);
+  background-size: cover;
+  border-image: fill 0 linear-gradient(#0001, #000);
+  background-repeat: no-repeat;
+  padding: 200px 150px; 
+  justify-content: center;
+}
+
+.search form {
+  display: flex;
+}
+
+.search input[type='text'] {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 0%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+
+.search input[type='submit'] {
+  background: #f15d36;
+  color: #ffffff;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+/*Zh Canteen*/
+.search-zh {
+  display: flex;
+  background: #ffffff;
+  background-image: url(../images/zhCanteen.jpg);
+  background-size: cover;
+  border-image: fill 0 linear-gradient(#0001, #000);
+  background-repeat: no-repeat;
+  padding: 200px 150px; 
+  justify-content: center;
+}
+
+.search-zh form {
+  display: flex;
+}
+
+.search-zh input[type='text'] {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 0%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+
+.search-zh input[type='submit'] {
+  background: #f15d36;
+  color: #ffffff;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
+
+/* Food Item */
+.food-items-container {
+  background: #e0e0e0;
+  padding: 80px 5%;
+}
+
+.food-items-container h1 {
+  text-align: center;
+  color: #202020;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.food-items-container .food-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.food-items .item {
+  display: flex;
+  background: #ffffff;
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.food-items .item img {
+  border-radius: 10px;
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.food-items .item h3 {
+  color: #202020;
+  font-size: 16px;
+}
+
+.food-items .item p {
+  font-size: 14px;
+  font-weight: 800;
+  color: red;
+  margin: 10px 0px 2px;
+}
+
+.food-items .item span {
+  color: #2ead22;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.food-items .item input {
+  width: 35px;
+  display: block;
+  margin: 8px 0px;
+}
+
+.food-items .item input[type='submit'] {
+  background: #202020;
+  color: #ffffff;
+  padding: 8px 10px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}

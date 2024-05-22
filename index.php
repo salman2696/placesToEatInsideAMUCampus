@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,22 +21,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-
 <body>
     <div class="navBar">
         <div class="logo">
-            <img src="images/amuLogo.png">
+            <img src="images/amuLogo.png" alt="AMU Logo">
         </div>
-            <?php
-            include_once("config.php");
-            echo '<div class="list">';
-            echo '<a href="#" class="link">Library Canteen</a>';
-            echo '<a href="#" class="link">College Canteens</a>';
-            echo '<a href="#" class="link">Hall Canteens</a>';
-            ?>
+        <div class="list">
+            <a href="libraryCanteen.php" class="link">Library Canteen</a>
+            <div class="dropdown">
+                <a href="#" class="link">College Canteens</a>
+                <div class="dropdown-content">
+                    <a href="zhCanteen.php">ZH Canteen</a>
+                    <a href="#">Canteen 2</a>
+                    <a href="#">Canteen 3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="link">Hall Canteens</a>
+                <div class="dropdown-content">
+                    <a href="#">Canteen A</a>
+                    <a href="#">Canteen B</a>
+                    <a href="#">Canteen C</a>
+                </div>
+            </div>
             <div class="form-container">
                 <form action="/search">
                     <input type="text" placeholder="Search Canteens" name="search">
@@ -51,7 +58,7 @@
             <h1 style="color: #f15d36;">Places To Eat</h1>
             <h1>Inside AMU Campus</h1>
         </span>
-        <img src="images/centenary-gate.jpeg">
+        <img src="Images/centenary-gate.jpeg">
     </div>
     <div class="paragraph">
         <p>In <b>Aligarh Muslim university</b>, the array of canteens available caters to the diverse tastes and
@@ -69,21 +76,21 @@
     </div>
     <div class="canteen-box">
         <div class="library">
-            <img src="images/library-canteen.jpeg">
+            <img src="Images/library-canteen.jpeg">
             <h2>Library Canteen</h2>
             <a href="https://www.google.com/maps/place/W36G%2BQ3R,+AMU+Campus,+Aligarh,+Uttar+Pradesh+202001/@27.9118805,78.074611,21z/data=!4m6!3m5!1s0x3974a4fb1386502f:0x243dde2d17fbe6a5!8m2!3d27.9118605!4d78.0747798!16s%2Fg%2F11b8txcn_y?entry=ttu"
                 target="_blank">See Location</a>
             <i class="fa-solid fa-location-dot"></i>
         </div>
         <div class="turning-point">
-            <img src="images/turning-point.jpeg">
+            <img src="Images/turning-point.jpeg">
             <h2>Turning Point</h2>
             <a href="https://www.google.com/maps/place/Turning+Point/@27.911869,78.0753685,17z/data=!4m14!1m7!3m6!1s0x3974a4e4c29a615b:0x4ffc19075c9ed4bb!2sTurning+Point!8m2!3d27.9118643!4d78.0779434!16s%2Fg%2F11bx5pp3_9!3m5!1s0x3974a4e4c29a615b:0x4ffc19075c9ed4bb!8m2!3d27.9118643!4d78.0779434!16s%2Fg%2F11bx5pp3_9?entry=ttu"
                 target="_blank">See Location</a>
             <i class="fa-solid fa-location-dot"></i>
         </div>
         <div class="central-canteen">
-            <img src="images/central-canteen.jpg">
+            <img src="Images/central-canteen.jpg">
             <h2>Central Canteen</h2>
             <a href="#">See Location</a>
             <i class="fa-solid fa-location-dot"></i>
@@ -92,9 +99,6 @@
     <div class="footer">
         <p>© 2024 Mohammad Salman | All Rights Reserved</p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>
