@@ -4,7 +4,7 @@
 include_once("config.php");
 
 // Fetch all users data from database
-$result = mysqli_query($mysqli, "SELECT * FROM food_items");
+$result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 101");
 ?>
 
 <!DOCTYPE html>
@@ -42,9 +42,9 @@ $result = mysqli_query($mysqli, "SELECT * FROM food_items");
     </div>
 
     <div class="search-zh">
-        <form action="#" method="#">
-            <input type="text" name="search" placeholder="Search for food">
-            <input type="submit" name="submit">
+        <form action="search.php" method="get">
+            <input type="text" id="search" name="search" placeholder="Search for food">
+            <input type="submit" value="Search" name="submit">
         </form>
     </div>
 
@@ -54,16 +54,17 @@ $result = mysqli_query($mysqli, "SELECT * FROM food_items");
             <?php 
             while($food_items = mysqli_fetch_array($result)) { 
             echo "<div class='item'>";
-            echo "<img src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=3160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>";
+            echo "<img src='". $food_items['image_url']. "'alt'" . $food_items['Item_name']. "'/>";
              echo   "<div>";
-                    echo "<h3 id='item-title'>". $food_items['Item_name']."</h3>";
-                    echo "<p id='item-price'>" . $food_items ['rates']. "</p>";
+                    echo "<h3>". $food_items['Item_name']."</h3>";
+                    echo "<p>" . $food_items ['rates']. "</p>";
                 echo "</div>";
             echo "</div>";    
             }
             ?>
         </div>
     </div>
+
 </body>
 
 </html>
