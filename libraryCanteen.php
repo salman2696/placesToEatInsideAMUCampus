@@ -1,3 +1,12 @@
+<?php
+
+// database connection 
+include_once("config.php");
+
+// Fetch all users data from database
+$result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 110");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,10 +38,10 @@
         <div class="logo">
             <img src="images/amuLogo.png" alt="AMU Logo">
         </div>
-        <h1 class="m-r">Molana Azad Library Canteen</h1>
+        <h1 class="m-r">Library Canteen</h1>
     </div>
 
-    <div class="search">
+    <div class="search-lib">
         <form action="#" method="#">
             <input type="text" name="search" placeholder="Search for food">
             <input type="submit" name="submit">
@@ -42,13 +51,17 @@
     <div class="food-items-container">
         <h1>Food Menus</h1>
         <div class="food-items">
-            <div class="item">
-                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=3160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="#">
-                <div>
-                    <h3 id="item-title"> ABC</h3>
-                    <p id="item-price">Rs. 00 </p>
-                </div>
-            </div>
+            <?php 
+            while($food_items = mysqli_fetch_array($result)) { 
+            echo "<div class='item'>";
+            echo "<img src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=3160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>";
+             echo   "<div>";
+                    echo "<h3>". $food_items['Item_name']."</h3>";
+                    echo "<p>" . $food_items ['rates']. "</p>";
+                echo "</div>";
+            echo "</div>";    
+            }
+            ?>
         </div>
     </div>
 </body>
