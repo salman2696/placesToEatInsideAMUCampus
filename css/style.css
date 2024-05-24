@@ -395,6 +395,42 @@ background-color: #ffffff;
   cursor: pointer;
 }
 
+/*Library Canteen*/
+.search-lib {
+  display: flex;
+  background: #ffffff;
+  background-image: url(../images/libraryCanteen.jpg);
+  background-size: cover;
+  border-image: fill 0 linear-gradient(#0001, #000);
+  background-repeat: no-repeat;
+  padding: 300px 150px; 
+  justify-content: center;
+}
+
+.search-lib form {
+  display: flex;
+}
+
+.search-lib input[type='text'] {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 0%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+
+.search-lib input[type='submit'] {
+  background: #f15d36;
+  color: #ffffff;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 0px 10px;
+  cursor: pointer;
+}
+
 
 /* Food Item */
 .food-items-container {
