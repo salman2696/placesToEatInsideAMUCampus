@@ -6,12 +6,10 @@
 
 .m-r{
   margin-right: 20px;
-}
-
-h1{
-  color: white;
+  color: #e0e0e0;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 
 .navBar {
   display: flex;
@@ -438,11 +436,12 @@ background-color: #ffffff;
   padding: 80px 5%;
 }
 
-.food-items-container h1 {
+.food-items-container .food-items .item {
   text-align: center;
   color: #202020;
   letter-spacing: 0.5px;
   text-transform: capitalize;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .food-items-container .food-items {
@@ -459,6 +458,10 @@ background-color: #ffffff;
   padding: 15px 30px;
   border-radius: 10px;
   margin: 10px;
+}
+
+.food-items .item div{
+  width: 120px;
 }
 
 .food-items .item img {
@@ -501,4 +504,35 @@ background-color: #ffffff;
   border: none;
   cursor: pointer;
   margin-top: 15px;
+}
+
+
+/*map Section*/
+
+.map-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+#map {
+    height: 400px;
+    width: 80%;
+    z-index:100;
+    
+}
+.details {
+  width: 20%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.details h2 {
+  margin-top: 0;
+}
+.details p {
+  margin: 10px 0;
+}
+
+.footer{
+  height: 5%;
 }

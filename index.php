@@ -33,23 +33,19 @@
                 <a href="#" class="link">College Canteens</a>
                 <div class="dropdown-content">
                     <a href="zhCanteen.php">ZH Canteen</a>
-                    <a href="#">Canteen 2</a>
-                    <a href="#">Canteen 3</a>
+                    <a href="TurningPoint.php">Turning Point</a>
                 </div>
             </div>
             <div class="dropdown">
                 <a href="#" class="link">Hall Canteens</a>
                 <div class="dropdown-content">
-                    <a href="#">Canteen A</a>
-                    <a href="#">Canteen B</a>
-                    <a href="#">Canteen C</a>
+                    <a href="SulaimanHall.php">Sulaiman Hall</a>
+                    <a href="Sshall.php">S.S. Hall</a>
+                    <a href="VM.php">V.M. Hall</a>
+                    <a href="SZ.php">Sir Ziauddin</a>
+                    <a href="HadiHassan.php">Hadi Hasan Hall</a>
+                    <a href="HabibHall.php">Habib Hall</a>
                 </div>
-            </div>
-            <div class="form-container">
-                <form action="/search">
-                    <input type="text" placeholder="Search Canteens" name="search">
-                    <button type="submit">Search</button>
-                </form>
             </div>
         </div>
     </div>
@@ -97,7 +93,7 @@
         </div>
     </div>
     <div class="footer">
-        <p>© 2024 Mohammad Salman | All Rights Reserved</p>
+        <p>© 2024 | All Rights Reserved</p>
     </div>
 </body>
 

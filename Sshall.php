@@ -4,8 +4,8 @@
 include_once("config.php");
 
 // Fetch all users data from database
-$result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 101");
-$canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101");
+$result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 104");
+$canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 105");
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Places to eat inside AMU</title>
+    <title>SS HALL</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@ $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101
         <div class="logo">
             <img src="images/amuLogo.png" alt="AMU Logo">
         </div>
-        <h1 class="m-r">Z.H Canteen</h1>
+        <h1 class="m-r">SS HALL CANTEEN</h1>
     </div>
 
     <div class="search-zh">
@@ -82,7 +82,7 @@ $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101
     </div>
     <div class="footer"></div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js"></script>  
 
 </body>
 

@@ -4,8 +4,8 @@
 include_once("config.php");
 
 // Fetch all users data from database
-$result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 101");
-$canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101");
+$result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 104");
+$canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 102");
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101
         <div class="logo">
             <img src="images/amuLogo.png" alt="AMU Logo">
         </div>
-        <h1 class="m-r">Z.H Canteen</h1>
+        <h1 class="m-r">Sulaiman Canteen</h1>
     </div>
 
     <div class="search-zh">
@@ -71,7 +71,7 @@ $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101
             <!-- Your map will be embedded here -->
         </div>
         <div class="details">
-            <?php
+        <?php
             while ($canteen_details = mysqli_fetch_array($canteen)){
             echo"<h2>".$canteen_details['Cant_name']."</h2>";
             echo"<p><strong>Address: </strong>" .$canteen_details['Cant_loc']."</p>";

@@ -5,6 +5,7 @@ include_once("config.php");
 
 // Fetch all users data from database
 $result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 110");
+$canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 110");
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +32,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 110"
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 
 <body>
@@ -42,19 +44,19 @@ $result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 110"
     </div>
 
     <div class="search-lib">
-        <form action="#" method="#">
+        <form action="search.php" method="get">
             <input type="text" name="search" placeholder="Search for food">
             <input type="submit" name="submit">
         </form>
     </div>
 
     <div class="food-items-container">
-        <h1>Food Menus</h1>
+        <h1>Food Menu</h1>
         <div class="food-items">
             <?php 
-            while($food_items = mysqli_fetch_array($result)) { 
+            while($food_items = mysqli_fetch_array($result)) {
             echo "<div class='item'>";
-            echo "<img src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=3160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'>";
+            echo "<img src='". $food_items['image_url']. "'alt'" . $food_items['Item_name']. "'/>";
              echo   "<div>";
                     echo "<h3>". $food_items['Item_name']."</h3>";
                     echo "<p>" . $food_items ['rates']. "</p>";
@@ -64,6 +66,23 @@ $result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 110"
             ?>
         </div>
     </div>
+   
+    <div class="map-container">
+         <div id="map" class="map">
+        </div>
+        <div class="details">
+        <?php
+            while ($canteen_details = mysqli_fetch_array($canteen)){
+            echo"<h2>".$canteen_details['Cant_name']."</h2>";
+            echo"<p><strong>Address: </strong>" .$canteen_details['Cant_loc']."</p>";
+            echo"<p><strong>Opening Hours: </strong>" . $canteen_details['Cant_time']."</p>";
+            }
+            ?>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
