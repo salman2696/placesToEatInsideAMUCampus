@@ -54,7 +54,7 @@
             <h1 style="color: #f15d36;">Places To Eat</h1>
             <h1>Inside AMU Campus</h1>
         </span>
-        <img src="Images/centenary-gate.jpeg">
+        <img src="Images/babe-syed.jpg">
     </div>
     <div class="paragraph">
         <p>In <b>Aligarh Muslim university</b>, the array of canteens available caters to the diverse tastes and
@@ -92,7 +92,7 @@
             <i class="fa-solid fa-location-dot"></i>
         </div>
     </div>
-    <div class="footer">
+    <div class="footer-index">
         <p>© 2024 | All Rights Reserved</p>
     </div>
 </body>

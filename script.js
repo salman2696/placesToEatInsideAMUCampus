@@ -1,10 +1,11 @@
 // Replace these coordinates with your target longitude and latitude
-const targetLocation = [27.911942, 78.074599]; // Example: New York (Lat, Lng)
+//const targetLocation = [27.911942, 78.074599]; // Example: New York (Lat, Lng)
 
-function initMap() {
+function initMap(long,lat) {
     // Create the map
-    const map = L.map('map').setView(targetLocation, 13);
+    const targetLocation = [lat, long];
 
+    const map = L.map('map').setView(targetLocation, 13);
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -70,5 +71,3 @@ function calculateAndDisplayRoute(map, start, end) {
         });
 }
 
-// Initialize the map when the window loads
-window.onload = initMap;

@@ -32,7 +32,7 @@ $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 
 <body>
@@ -68,7 +68,15 @@ $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101
     </div>
     <div class="map-container">
         <div id="map" class="map">
-            <!-- Your map will be embedded here -->
+        <?php
+    while($place_location = mysqli_fetch_array($canteen)) {
+    ?>
+        <script type='text/javascript'>
+        initMap(<?php echo $place_location['place_lati']?>, <?php echo $place_location['place_longi']?>);
+        </script>
+         <?php
+    }
+    ?>
         </div>
         <div class="details">
             <?php
