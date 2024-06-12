@@ -6,6 +6,7 @@ include_once("config.php");
 // Fetch all users data from database
 $result = mysqli_query($mysqli, "SELECT * FROM food_items WHERE CanteenID = 101");
 $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101");
+$canteen_info = mysqli_fetch_array($canteen);
 ?>
 
 <!DOCTYPE html>
@@ -33,12 +34,14 @@ $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
 </head>
 
 <body>
     <div class="navBar">
         <div class="logo">
-            <img src="images/amuLogo.png" alt="AMU Logo">
+        <a href = "index.php"><img src="images/amuLogo.png" alt="AMU Logo"></a>
         </div>
         <h1 class="m-r">Z.H Canteen</h1>
     </div>
@@ -67,30 +70,26 @@ $canteen = mysqli_query($mysqli, "SELECT * FROM canteen_info WHERE Cant_id = 101
         </div>
     </div>
     <div class="map-container">
-        <div id="map" class="map">
-        <?php
-    while($place_location = mysqli_fetch_array($canteen)) {
-    ?>
-        <script type='text/javascript'>
-        initMap(<?php echo $place_location['place_lati']?>, <?php echo $place_location['place_longi']?>);
-        </script>
-         <?php
-    }
-    ?>
-        </div>
+        <div id="map" class="map"></div>
         <div class="details">
             <?php
-            while ($canteen_details = mysqli_fetch_array($canteen)){
-            echo"<h2>".$canteen_details['Cant_name']."</h2>";
-            echo"<p><strong>Address: </strong>" .$canteen_details['Cant_loc']."</p>";
-            echo"<p><strong>Opening Hours: </strong>" . $canteen_details['Cant_time']."</p>";
+            if ($canteen_info) {
+                echo "<h2>" .($canteen_info['Cant_name']) . "</h2>";
+                echo "<p><strong>Address: </strong>" .($canteen_info['Cant_loc']) . "</p>";
+                echo "<p><strong>Opening Hours: </strong>" .($canteen_info['Cant_time']) . "</p>";
+            } else {
+                echo "<p>No canteen information available.</p>";
             }
             ?>
         </div>
     </div>
     <div class="footer"></div>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+
+    <script type='text/javascript'>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            initMap(<?php echo $canteen_info['place_lati']; ?>, <?php echo $canteen_info['place_longi']; ?>);
+        });
+    </script>
 
 </body>
 

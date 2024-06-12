@@ -1,11 +1,8 @@
-// Replace these coordinates with your target longitude and latitude
-//const targetLocation = [27.911942, 78.074599]; // Example: New York (Lat, Lng)
-
-function initMap(long,lat) {
+function initMap(lat, long) {
     // Create the map
     const targetLocation = [lat, long];
-
     const map = L.map('map').setView(targetLocation, 13);
+
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -13,18 +10,18 @@ function initMap(long,lat) {
 
     // Marker for target location
     L.marker(targetLocation).addTo(map)
-        .bindPopup('Target Location')
+        .bindPopup('Canteen Location')
         .openPopup();
 
     // Get the current location
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                //const currentLocation = [position.coords.latitude, position.coords.longitude];
-				const currentLocation = [27.916403, 78.072716]
+                const currentLocation = [position.coords.latitude, position.coords.longitude];
+
                 // Marker for current location
                 L.marker(currentLocation).addTo(map)
-                    .bindPopup('Current Location')
+                    .bindPopup('Your Current Location')
                     .openPopup();
 
                 // Fit the map to show both locations
@@ -70,4 +67,3 @@ function calculateAndDisplayRoute(map, start, end) {
             alert('Could not fetch directions.');
         });
 }
-
