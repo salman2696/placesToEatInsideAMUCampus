@@ -133,6 +133,7 @@ button[type="submit"]:hover {
   justify-content: space-between;
   align-items: center;
 }
+
 .main-info::before {
   content: "";
   position: absolute;
@@ -168,8 +169,20 @@ button[type="submit"]:hover {
   background-repeat: no-repeat;
 }
 
+@media (max-width: 900px){
+  .main-info img{
+    display: none;
+  }
+}
+
 .heading-1{
   margin: 0px 300px 0px 0px;
+}
+
+@media (max-width: 900px){
+  .heading-1{
+   margin: 0px;
+  }
 }
 .heading-1 h1 {
   color: #ffffff;
@@ -212,9 +225,8 @@ button[type="submit"]:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  margin: 20px 0px 0px 0px;
-  padding: 30px;
-  
+  margin: 20px;
+
 }
 
 .library {
@@ -224,6 +236,7 @@ background-color: #ffffff;
   border-radius: 10px;
   text-align: center;
   transition: transform 0.3s ease;
+  margin: 20px;
 }
 .library img{
   width: 300px;
@@ -253,6 +266,7 @@ background-color: #ffffff;
   border-radius: 10px;
   text-align: center;
   transition: transform 0.3s ease;
+  margin: 20px;
 }
 
 .turning-point img{
@@ -283,6 +297,7 @@ background-color: #ffffff;
   border-radius: 10px;
   text-align: center;
   transition: transform 0.3s ease;
+  margin: 20px;
 }
 
 .central-canteen img{
@@ -517,8 +532,7 @@ background-color: #ffffff;
 #map {
     height: 400px;
     width: 80%;
-    z-index:100;
-    
+    z-index:100;   
 }
 .details {
   width: 20%;
@@ -535,4 +549,33 @@ background-color: #ffffff;
 
 .footer{
   height: 5%;
+}
+
+@media (max-width: 900px){
+  .map-container{
+    display: flex;
+    flex-direction: column;
+  }
+  #map {
+    height: 400px;
+    width: 100%;
+    z-index:100;   
+}
+
+.details {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+}
+
+@media (max-width: 450px){
+  .food-items .item div{
+    width: 70px;
+  }
+
+  .m-r{
+    font-size: 20px;
+  }
 }
