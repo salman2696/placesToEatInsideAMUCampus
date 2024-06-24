@@ -197,6 +197,12 @@ button[type="submit"]:hover {
   margin: 30px 100px 30px 100px;
 }
 
+@media (max-width: 768px) {
+ .paragraph {
+  margin:30px;
+ } 
+}
+
 .paragraph p {
   font-weight: 400;
   font-style: normal;
@@ -220,7 +226,7 @@ button[type="submit"]:hover {
 }
 
 .canteen-box {
-  background-color: #ffd9b6;
+  background-color: #fdcb9b;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
